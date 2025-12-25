@@ -26,21 +26,13 @@
     <script> 
       let score = JSON.parse(localStorage.getItem('score'));
 
-      if (score === null){ // if (!score) - Because null is a falsy value
+      if (score === null){ 
         score = {
           wins: 0,
           losses:0,
           ties:0
         };
       }
-
-      //---Or 
-      /*let score = JSON.parse(localStorage.getItem('score')) || {
-          wins: 0,
-          losses:0,
-          ties:0
-        };
-      */
 
       function playGame(playerMove){
         score = JSON.parse(localStorage.getItem('score'));
@@ -82,7 +74,7 @@
           score.ties += 1;
         }
 
-        localStorage.setItem('score', JSON.stringify(score)); // (name, string)
+        localStorage.setItem('score', JSON.stringify(score)); 
 
         alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}.
         Wins: ${score.wins} 
